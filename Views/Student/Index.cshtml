@@ -1,0 +1,49 @@
+﻿@model StudentVm
+<h1> List of Students </h1>
+<form method="get" asp-action="Index" asp-controller="Student">
+    Search:
+    <input type="text" name="SearchCriteria"  />
+    <input type="submit" value="Filter"/>
+</form>
+<br />
+<div>
+    <a asp-action="IndexCreate" class="btn btn-primary"> Create New Student </a>
+</div>
+<div>   
+   <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Profession</td>
+                    <td>Image</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Students.Values.Count > 0)
+                {
+                    @foreach (var student in Model.Students.Values)
+                    {
+                        // simply calling partial view page ( StudentSummaryPartial)
+                        @await Html.PartialAsync("StudentSummaryPartial" , student)
+                        
+
+                        @*var imagePath = "/Images/" + @student.Image;
+                        <tr>
+                            <td>@student.Id</td>
+                            <td>@student.Name</td>
+                            <td>@student.Email</td>
+                            <td>@student.Profession</td>
+                            <td><img src="@imagePath" /></td>
+                            <td>
+                                <a class="btn btn-primary" asp-action="IndexEdit" asp-route-id="@student.Id">EDIT</a>
+                                <a class="btn btn-danger" asp-action="DeleteStudent" asp-route-id="@student.Id" onclick="return confirm('Are you sure you want to delete this user:@student.Name')">DELETE</a>
+                            </td>
+                        </tr>*@
+                    }
+                }
+            </tbody>
+        </table>  
+ </div>

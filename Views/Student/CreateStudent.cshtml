@@ -1,0 +1,43 @@
+﻿@model Student 
+
+<h1>Create Student New Here </h1>
+
+<div>
+    <form method="post" asp-action="CreateStudent"> 
+       
+        @await Html.PartialAsync("CreateUpdatePartial" ) 
+        @*<div class="form-group">
+            <label asp-for="@Model.Name">Name</label>
+            <input asp-for="@Model.Name" class="form-control" />
+            <span asp-validation-for="@Model.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Email">Email</label>
+            <input asp-for="@Model.Email" class="form-control" />
+            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Profession">Profession</label>
+            <select asp-for="@Model.Profession" class="form-control" asp-items="Html.GetEnumSelectList<Profession>()">
+            </select>
+            <span asp-validation-for="@Model.Profession" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Image">Image</label>
+            <select asp-for="@Model.Image" class="form-control">
+                <option  value="alex.jpg">Alex</option>
+                <option value="john.jpg">John</option>
+                <option value="malina.jpg">Malina</option>
+                <option selected value="nilma.jpg">Nilma</option>
+            </select>
+            <span asp-validation-for="@Model.Image"  class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>*@
+
+    </form>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-primary"> Back to the Main List </a>
+</div>
